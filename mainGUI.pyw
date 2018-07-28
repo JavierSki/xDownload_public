@@ -1,7 +1,18 @@
-from tkinter import *
-from tkinter import ttk
-import os
+try:
+    # for Python2
+    from Tkinter import *   # notice capitalized T in Tkinter 
+except ImportError:
+    # for Python3
+    from tkinter import *   # notice lowercase 't' in tkinter here
 
+try:
+  # for Python2
+  import ttk
+except ImportError:
+  # for Python3 
+  from tkinter import ttk
+
+import os
 def btnSearchAndDownload_Click():
     search = str(txtSearch.get()).replace(" ", "+") # replace spaces by +
     first_page = str(txtFirstPage.get())
