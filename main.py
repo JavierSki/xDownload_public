@@ -14,15 +14,15 @@ from CDownloaderGotPorn import DownloaderGotPorn
 
 
 if len(sys.argv) == 6:
-    server = str(sys.argv[1])
-    search = str(sys.argv[2])
+    server = str(sys.argv[1]).lower()
+    search = str(sys.argv[2]).lower()
     first_page = int(sys.argv[3])
     last_page = int(sys.argv[4])
     output_dir = str(sys.argv[5])
-    server_downloaders = {"XVideos": DownloaderXvideos, "YouPorn": DownloaderYouPorn, "RedTube": DownloaderRedTube,
-                        "PornHub": DownloaderPornHub, "Beeg": DownloaderBeeg, "XHamster": DownloaderXHamster,
-                        "EPorner": DownloaderEporner, "Porn": DownloaderPorn, "PornHD": DownloaderPornHD,
-                        "GotPorn": DownloaderGotPorn}
+    server_downloaders = {"xvideos": DownloaderXvideos, "youporn": DownloaderYouPorn, "redtube": DownloaderRedTube,
+                        "pornhub": DownloaderPornHub, "beeg": DownloaderBeeg, "xhamster": DownloaderXHamster,
+                        "eporner": DownloaderEporner, "porn": DownloaderPorn, "pornhd": DownloaderPornHD,
+                        "gotporn": DownloaderGotPorn}
 
     if server in server_downloaders.keys():
         print("-----------------------------------------------------------")
