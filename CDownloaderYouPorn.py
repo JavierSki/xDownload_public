@@ -2,7 +2,7 @@ import requests
 import bs4
 import os
 from CConection import Conection
-import json
+from CJsonFile import JsonFile
 import io
 
 class DownloaderYouPorn:
@@ -15,13 +15,14 @@ class DownloaderYouPorn:
         self.i = 1
         self.j = 1
         self.Conection = Conection()
+        self.jsonfile = JsonFile("data")
         self.list_link = []
 
     def download(self):
         self.list_link = self.get_list_link()
         if self.list_link != 0:
             for j in range(0, len(self.get_list_link())):
-                self.json_details_write(len(self.list_link), j, self.list_link[j])
+                self.jsonfile.json_details_write(len(self.list_link), j, self.list_link[j])
                 command = 'youtube-dl \"' + self.list_link[j] + '\"' + ' --output \\' + self.output_dir + '\\%(title)s.%(ext)s'
                 os.system(command)
 
@@ -38,17 +39,3 @@ class DownloaderYouPorn:
         else:
             print("No conection... ")
             return 0
-
-    # writing a json file to the graphic layer
-
-    def json_details_write(self, _list_size, _current_number, _current_link):
-        percent = (_current_number/_list_size)*100  # percent calc
-        # Define data
-        data = {'%': percent,
-                'range': _list_size,
-                'current': _current_number,
-                'link': _current_link}
-        # Write JSON file
-        with io.open('data.json', 'w', encoding='utf8') as outfile:
-            str_ = json.dumps(data, indent=4, sort_keys=True, separators=(',', ': '), ensure_ascii=False)
-            outfile.write(str_)
