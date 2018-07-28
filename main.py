@@ -9,6 +9,7 @@ from CDownloaderEporner import DownloaderEporner
 from CDownloaderPorn import DownloaderPorn
 from CDownloaderPornHD import DownloaderPornHD
 from CDownloaderGotPorn import DownloaderGotPorn
+from CDownloaderSpankBang import DownloaderSpankBang
 # ordem: servidor, pesquisa, pagina inicial, pagina final, pasta de saida
 
 if len(sys.argv) == 6:
@@ -97,6 +98,14 @@ if len(sys.argv) == 6:
         print("page " + str(first_page) + " to " + str(last_page))
         print("-----------------------------------------------------------")
         downloader = DownloaderGotPorn(output_dir, search, first_page, last_page)
+        downloader.download()
+    elif server == 'SpankBang':
+        print("-----------------------------------------------------------")
+        print("server: SpankBang")
+        print("search: " + search)
+        print("page " + str(first_page) + " to " + str(last_page))
+        print("-----------------------------------------------------------")
+        downloader = DownloaderSpankBang(output_dir, search, first_page, last_page)
         downloader.download()
     else:
         print('Server not found')

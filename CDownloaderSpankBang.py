@@ -8,7 +8,7 @@ import subprocess
 from subprocess import DEVNULL, STDOUT, check_call
 
 
-class DownloaderGotPorn:
+class DownloaderSpankBang:
 
     def __init__(self, _output_dir, _search, _first_page, _last_page):
         self.output_dir = _output_dir
@@ -28,14 +28,25 @@ class DownloaderGotPorn:
                 command = 'youtube-dl \"' + self.list_link[j] + '\"' + ' --output \\' + self.output_dir + '\\%(title)s.%(ext)s'
                 os.system(command)
 
+    def download_hiden(self):
+        self.list_link = self.get_list_link()
+        if self.list_link != 0:
+            for j in range(0, len(self.list_link)):
+                self.json_details_write(len(self.list_link), j, self.list_link[j])
+                command = 'youtube-dl \"' + self.list_link[j] + '\"' + ' --output \\' + self.output_dir + '\\%(title)s.%(ext)s'
+                info = subprocess.STARTUPINFO()
+                info.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+                info.wShowWindow = subprocess.SW_HIDE
+                proc = subprocess.call(command, startupinfo=info)
+
     def get_list_link(self):
         self.list_link = []
         if self.Conection.get_status():
             for self.i in range(self.first_page, self.last_page):
-                response = requests.get(str('https://www.gotporn.com/results?search_query=' + self.search + '&page=' + str(self.i)))
+                response = requests.get(str('https://br.spankbang.com/s/' + self.search + '/' + str(self.i)) + "/")
                 soup = bs4.BeautifulSoup(response.text, "html.parser")
-                for li in soup.find_all(class_='video-item'):  # thumb é a classe de div que contem os links
-                    link = str(li.find('a')['href'])
+                for div in soup.find_all(class_='video-item'):  # video-item é a classe de div que contém os links
+                    link = "https://br.spankbang.com" + str(div.find('a')['href'])
                     self.list_link.append(link)
             return self.list_link
         else:

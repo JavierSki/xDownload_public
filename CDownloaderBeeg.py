@@ -32,6 +32,7 @@ class DownloaderBeeg:
                 os.system(command)
 
     def get_list_link(self):
+        self.list_link = []
         if self.Conection.get_status():
             url = str('https://www.beeg.com/tag/' + self.search)
 

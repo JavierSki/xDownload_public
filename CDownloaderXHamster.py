@@ -27,6 +27,7 @@ class DownloaderXHamster:
                 os.system(command)
 
     def get_list_link(self):
+        self.list_link = []
         if self.Conection.get_status():
             for self.i in range(self.first_page, self.last_page):
                 response = requests.get(str('https://pt.xhamster.com/search?q=' + self.search + '&p=' + str(self.i)))
