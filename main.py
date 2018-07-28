@@ -13,13 +13,13 @@ from CDownloaderSpankBang import DownloaderSpankBang
 # ordem: servidor, pesquisa, pagina inicial, pagina final, pasta de saida
 
 if len(sys.argv) == 6:
-    server = str(sys.argv[1])
-    search = str(sys.argv[2])
+    server = str(sys.argv[1]).lower()
+    search = str(sys.argv[2]).lower()
     first_page = int(sys.argv[3])
     last_page = int(sys.argv[4])
     output_dir = str(sys.argv[5])
 
-    if server == 'XVideos':
+    if server == 'xvideos':
         print("-----------------------------------------------------------")
         print("server: XVideos")
         print("search: " + search)
@@ -27,7 +27,7 @@ if len(sys.argv) == 6:
         print("-----------------------------------------------------------")
         downloader = DownloaderXvideos(output_dir, search, first_page, last_page)
         downloader.download()
-    elif server == 'YouPorn':
+    elif server == 'youporn':
         print("-----------------------------------------------------------")
         print("server: YouPorn")
         print("search: " + search)
@@ -35,7 +35,7 @@ if len(sys.argv) == 6:
         print("-----------------------------------------------------------")
         downloader = DownloaderYouPorn(output_dir, search, first_page, last_page)
         downloader.download()
-    elif server == 'RedTube':
+    elif server == 'redtube':
         print("-----------------------------------------------------------")
         print("server: RedTube")
         print("search: " + search)
@@ -43,7 +43,7 @@ if len(sys.argv) == 6:
         print("-----------------------------------------------------------")
         downloader = DownloaderRedTube(output_dir, search, first_page, last_page)
         downloader.download()
-    elif server == 'PornHub':
+    elif server == 'pornhub':
         print("-----------------------------------------------------------")
         print("server: PornHub")
         print("search: " + search)
@@ -51,7 +51,7 @@ if len(sys.argv) == 6:
         print("-----------------------------------------------------------")
         downloader = DownloaderPornHub(output_dir, search, first_page, last_page)
         downloader.download()
-    elif server == 'Beeg':
+    elif server == 'beeg':
         print("-----------------------------------------------------------")
         print("server: Beeg")
         print("search: " + search)
@@ -59,7 +59,7 @@ if len(sys.argv) == 6:
         print("-----------------------------------------------------------")
         downloader = DownloaderBeeg(output_dir, search, first_page, last_page)
         downloader.download()
-    elif server == 'XHamster':
+    elif server == 'xhamster':
         print("-----------------------------------------------------------")
         print("server: XHamster")
         print("search: " + search)
@@ -67,7 +67,7 @@ if len(sys.argv) == 6:
         print("-----------------------------------------------------------")
         downloader = DownloaderXHamster(output_dir, search, first_page, last_page)
         downloader.download()
-    elif server == 'EPorner':
+    elif server == 'eporner':
         print("-----------------------------------------------------------")
         print("server: EPorner")
         print("search: " + search)
@@ -75,7 +75,7 @@ if len(sys.argv) == 6:
         print("-----------------------------------------------------------")
         downloader = DownloaderEporner(output_dir, search, first_page, last_page)
         downloader.download()
-    elif server == 'Porn':
+    elif server == 'porn':
         print("-----------------------------------------------------------")
         print("server: Porn")
         print("search: " + search)
@@ -83,7 +83,7 @@ if len(sys.argv) == 6:
         print("-----------------------------------------------------------")
         downloader = DownloaderPorn(output_dir, search, first_page, last_page)
         downloader.download()
-    elif server == 'PornHD':
+    elif server == 'pornhd':
         print("-----------------------------------------------------------")
         print("server: PornHD")
         print("search: " + search)
@@ -91,7 +91,7 @@ if len(sys.argv) == 6:
         print("-----------------------------------------------------------")
         downloader = DownloaderPornHD(output_dir, search, first_page, last_page)
         downloader.download()
-    elif server == 'GotPorn':
+    elif server == 'gotporn':
         print("-----------------------------------------------------------")
         print("server: GotPorn")
         print("search: " + search)
@@ -99,7 +99,7 @@ if len(sys.argv) == 6:
         print("-----------------------------------------------------------")
         downloader = DownloaderGotPorn(output_dir, search, first_page, last_page)
         downloader.download()
-    elif server == 'SpankBang':
+    elif server == 'spankbang':
         print("-----------------------------------------------------------")
         print("server: SpankBang")
         print("search: " + search)
