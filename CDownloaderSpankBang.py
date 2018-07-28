@@ -1,6 +1,6 @@
 import requests
 import bs4
-import os
+import youtube_dl
 from CConection import Conection
 from CJsonFile import JsonFile
 import io
@@ -27,14 +27,15 @@ class DownloaderSpankBang:
             for j in range(0, len(self.list_link)):
                 self.jsonfile.json_details_write(len(self.list_link), j, self.list_link[j])
                 command = 'youtube-dl \"' + self.list_link[j] + '\"' + ' --output \\' + self.output_dir + '\\%(title)s.%(ext)s'
-                os.system(command)
+                self.ydl_opts = {'outtmpl': self.output_dir + '\%(title)s.%(ext)s'}
+                with youtube_dl.YoutubeDL(self.ydl_opts) as ydl:
+                    ydl.download([self.list_link[j]])
 
     def download_hiden(self):
         self.list_link = self.get_list_link()
         if self.list_link != 0:
             for j in range(0, len(self.list_link)):
                 self.jsonfile.json_details_write(len(self.list_link), j, self.list_link[j])
-                command = 'youtube-dl \"' + self.list_link[j] + '\"' + ' --output \\' + self.output_dir + '\\%(title)s.%(ext)s'
                 info = subprocess.STARTUPINFO()
                 info.dwFlags |= subprocess.STARTF_USESHOWWINDOW
                 info.wShowWindow = subprocess.SW_HIDE

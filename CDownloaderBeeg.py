@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import bs4
-import os
+import youtube_dl
 import time
 from CConection import Conection
 from CJsonFile import JsonFile
@@ -29,8 +29,9 @@ class DownloaderBeeg:
         if self.list_link != 0:
             for j in range(0, len(self.get_list_link())):
                 self.jsonfile.json_details_write(len(self.list_link), j, self.list_link[j])
-                command = 'youtube-dl \"' + self.list_link[j] + '\"' + ' --output \\' + self.output_dir + '\\%(title)s.%(ext)s'
-                os.system(command)
+                self.ydl_opts = {'outtmpl': self.output_dir + '\%(title)s.%(ext)s'}
+                with youtube_dl.YoutubeDL(self.ydl_opts) as ydl:
+                    ydl.download([self.list_link[j]])
 
     def get_list_link(self):
         self.list_link = []
