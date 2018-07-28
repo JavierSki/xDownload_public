@@ -13,6 +13,8 @@ except ImportError:
   from tkinter import ttk
 
 import os
+import platform
+
 def btnSearchAndDownload_Click():
     search = str(txtSearch.get()).replace(" ", "+") # replace spaces by +
     first_page = str(txtFirstPage.get())
@@ -31,9 +33,14 @@ line4 = 85
 line5 = 110
 line6 = 135
 
+plataforma = platform.system()
+
 mainGUI = Tk()
 mainGUI.title("xDownload V 1.0")
-mainGUI.geometry("270x150+300+300")
+if(plataforma == 'Linux'):
+  mainGUI.geometry("350x150+300+300")
+else:
+  mainGUI.geometry("270x150+300+300")
 mainGUI.resizable(0, 0)
 
 lblSubject = Label(mainGUI, text="Search:")
