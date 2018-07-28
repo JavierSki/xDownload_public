@@ -27,7 +27,7 @@ class DownloaderXvideos:
                 self.json_details_write(len(self.list_link), j, self.list_link[j])
                 command = 'youtube-dl \"' + self.list_link[j] + '\"' + ' --output \\' + self.output_dir + '\\%(title)s.%(ext)s'
                 os.system(command)
-
+    '''
     def download_hiden(self):
         self.list_link = self.get_list_link()
         if self.list_link != 0:
@@ -38,6 +38,7 @@ class DownloaderXvideos:
                 info.dwFlags |= subprocess.STARTF_USESHOWWINDOW
                 info.wShowWindow = subprocess.SW_HIDE
                 proc = subprocess.call(command, startupinfo=info)
+    '''
 
     def get_list_link(self):
         self.list_link = []
