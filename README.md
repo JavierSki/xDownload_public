@@ -14,6 +14,7 @@ or
 - requests `pip install requests`
 - bs4 `pip install bs4`
 - selenium `pip install selenium`
+- youtube-dl `pip install youtube-dl`
 
 ### Supported servers
 - XVideos
