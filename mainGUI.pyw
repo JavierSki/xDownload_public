@@ -14,6 +14,7 @@ except ImportError:
 
 import os
 import platform
+from PIL import Image, ImageTk
 
 def btnSearchAndDownload_Click():
     search = str(txtSearch.get()).replace(" ", "+") # replace spaces by +
@@ -87,8 +88,14 @@ cbserver['values'] = ('Beeg',
 
 lblOutPut = Label(mainGUI, text="Out dir:")
 lblOutPut.place(x=10, y=line4)
-txtOutput = ttk.Entry(mainGUI, width=30)
+txtOutput = ttk.Entry(mainGUI, width=23)
 txtOutput.place(x=70, y=line4)
+
+buttonImage = Image.open('folder.png')
+buttonPhoto = ImageTk.PhotoImage(buttonImage)
+
+btnSelectDir = ttk.Button(mainGUI, image=buttonPhoto, width=5)
+btnSelectDir.place(x=225, y=line4)
 
 btnSearchAndDownload = ttk.Button(mainGUI, text="Search and Download All", command=btnSearchAndDownload_Click, width=39)
 btnSearchAndDownload.place(x=12, y=line5)
