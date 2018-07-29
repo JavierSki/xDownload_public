@@ -120,6 +120,15 @@ class Downloader:
                         link = "https://www.youporn.com" + str(div.find('a')['href'])
                         self.list_link.append(link)
                 return self.list_link
+            elif self.server == 'xnxx':
+                for self.i in range(self.first_page, self.last_page):
+                    response = requests.get(
+                        str('https://www.xnxx.com/search/' + self.search + '/' + str(self.i)) + '/')
+                    soup = bs4.BeautifulSoup(response.text, "html.parser")
+                    for div in soup.find_all(class_='thumb'):  # thumb é a classe de div que contem os links
+                        link = "https://www.xnxx.com" + str(div.find('a')['href'])
+                        self.list_link.append(link)
+                return self.list_link
             elif self.server == 'beeg':
                 url = str('https://www.beeg.com/tag/' + self.search)
                 options = webdriver.ChromeOptions()

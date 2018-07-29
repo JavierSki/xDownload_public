@@ -79,6 +79,7 @@ cbserver['values'] = ('Beeg',
                       'RedTube',
                       'SpankBang',
                       'XHamster',
+                      'XNXX',
                       'XVideos',
                       'YouPorn',)
 
