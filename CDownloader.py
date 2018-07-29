@@ -8,6 +8,8 @@ import youtube_dl
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 import time
+import os
+
 
 
 class Downloader:
@@ -26,11 +28,12 @@ class Downloader:
         self.ydl_opts = {}
 
     def download(self):
+
         self.list_link = self.get_list_link()
         if self.list_link != 0:
             for j in range(0, len(self.list_link)):
                 self.jsonfile.json_details_write(len(self.list_link), j, self.list_link[j])
-                 self.ydl_opts = {'outtmpl': self.output_dir + '/%(title)s.%(ext)s'}I
+                self.ydl_opts = {'outtmpl': self.output_dir + '/%(title)s.%(ext)s'}
                 with youtube_dl.YoutubeDL(self.ydl_opts) as ydl:
                     ydl.download([self.list_link[j]])
 
@@ -122,6 +125,15 @@ class Downloader:
                         link = "https://www.youporn.com" + str(div.find('a')['href'])
                         self.list_link.append(link)
                 return self.list_link
+            elif self.server == 'xnxx':
+                for self.i in range(self.first_page, self.last_page):
+                    response = requests.get(
+                        str('https://www.xnxx.com/search/' + self.search + '/' + str(self.i)) + '/')
+                    soup = bs4.BeautifulSoup(response.text, "html.parser")
+                    for div in soup.find_all(class_='thumb'):  # thumb é a classe de div que contem os links
+                        link = "https://www.xnxx.com" + str(div.find('a')['href'])
+                        self.list_link.append(link)
+                return self.list_link
             elif self.server == 'beeg':
                 url = str('https://www.beeg.com/tag/' + self.search)
                 options = webdriver.ChromeOptions()
@@ -142,7 +154,7 @@ class Downloader:
                 except TimeoutException:
                     print("Tempo de carregamento esgotado!")
                 except:
-                    os.system("cls")
+                    subprocess.run("cls", shell=True)
                     print("Tempo limite para o carregamento da página esgotado.")
                     print("Tente novamente!")
             else:
