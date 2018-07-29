@@ -24,7 +24,9 @@ def btnSearchAndDownload_Click():
     # ordem: server, search, firt page, last page, output dir
     command = 'start python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
     os.system(command)
-
+    
+def btnExit_Click():
+    mainGUI.destroy()
 
 line1 = 10
 line2 = 35
@@ -90,5 +92,8 @@ txtOutput.place(x=70, y=line4)
 
 btnSearchAndDownload = ttk.Button(mainGUI, text="Search and Download All", command=btnSearchAndDownload_Click, width=39)
 btnSearchAndDownload.place(x=12, y=line5)
+
+btnExit = ttk.Button(mainGUI, text="Exit", command=btnExit_Click, width=39)
+btnExit.place(x=12, y=line6)
 
 mainGUI.mainloop()
