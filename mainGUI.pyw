@@ -16,6 +16,7 @@ except ImportError:
 
 import os
 import platform
+import time
 from PIL import Image, ImageTk
 
 def btnSearchAndDownload_Click():
@@ -25,8 +26,12 @@ def btnSearchAndDownload_Click():
     server = str(cbserver.get())
     output_dir = str(txtOutput.get())
     # ordem: server, search, firt page, last page, output dir
-    command = 'start python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
+    if plataforma == 'Linux':
+        command = 'sudo python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
+    else:
+        command = 'start python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
     os.system(command)
+
 
 def get_output_dir():
     folder = askdirectory()
@@ -34,8 +39,20 @@ def get_output_dir():
     txtOutput.delete(0, END)
     txtOutput.insert(0, dirStr)
 
+
+x = 0
+def timer():
+    global x
+    if x < 30:
+        mainGUI.after(1000, timer) # call this function again in 1,000 milliseconds
+        x += 1
+        lblInfo['text'] = str(x)
+
+
+
 def btnExit_Click():
     mainGUI.destroy()
+
 
 line1 = 10
 line2 = 35
@@ -44,15 +61,20 @@ line4 = 85
 line5 = 110
 line6 = 135
 
+
 plataforma = platform.system()
 
 mainGUI = Tk()
 mainGUI.title("xDownload V 1.0")
-if(plataforma == 'Linux'):
-  mainGUI.geometry("350x150+300+300")
+
+
+if plataforma == 'Linux':
+  mainGUI.geometry("350x185+300+300")
 else:
-  mainGUI.geometry("270x165+300+300")
-mainGUI.resizable(0, 0)
+  mainGUI.geometry("270x185+300+300")
+
+
+mainGUI.resizable(1, 1)
 
 lblSubject = Label(mainGUI, text="Search:")
 lblSubject.place(x=10, y=line1)
@@ -105,12 +127,18 @@ buttonImage = Image.open('folder.png')
 buttonPhoto = ImageTk.PhotoImage(buttonImage)
 
 btnSelectDir = ttk.Button(mainGUI, image=buttonPhoto, command=get_output_dir, width=5)
-btnSelectDir.place(x=225, y=line4)
+btnSelectDir.place(x=265, y=line4)
 
 btnSearchAndDownload = ttk.Button(mainGUI, text="Search and Download All", command=btnSearchAndDownload_Click, width=39)
-btnSearchAndDownload.place(x=12, y=line5)
+btnSearchAndDownload.place(x=12, y=120)
 
 btnExit = ttk.Button(mainGUI, text="Exit", command=btnExit_Click, width=39)
-btnExit.place(x=12, y=line6)
+btnExit.place(x=12, y=150)
+
+lblInfo = Label(mainGUI, text="0")
+lblInfo.place(x=300, y=line4)
+
+
+timer()
 
 mainGUI.mainloop()
