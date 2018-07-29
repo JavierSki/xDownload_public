@@ -72,7 +72,4 @@ txtOutput.place(x=70, y=line4)
 btnSearchAndDownload = ttk.Button(mainGUI, text="Search and Download All", command=btnSearchAndDownload_Click, width=39)
 btnSearchAndDownload.place(x=12, y=line5)
 
-#lblInfo = Label(mainGUI, text="Info:")
-#lblInfo.place(x=10, y=line6)
-
 mainGUI.mainloop()
