@@ -1,6 +1,19 @@
-from tkinter import *
-from tkinter import ttk
+try:
+    # for Python2
+    from Tkinter import *   # notice capitalized T in Tkinter 
+except ImportError:
+    # for Python3
+    from tkinter import *   # notice lowercase 't' in tkinter here
+
+try:
+  # for Python2
+  import ttk
+except ImportError:
+  # for Python3 
+  from tkinter import ttk
+
 import os
+import platform
 
 def btnSearchAndDownload_Click():
     search = str(txtSearch.get()).replace(" ", "+") # replace spaces by +
@@ -20,9 +33,14 @@ line4 = 85
 line5 = 110
 line6 = 135
 
+plataforma = platform.system()
+
 mainGUI = Tk()
 mainGUI.title("xDownload V 1.0")
-mainGUI.geometry("270x150+300+300")
+if(plataforma == 'Linux'):
+  mainGUI.geometry("350x150+300+300")
+else:
+  mainGUI.geometry("270x150+300+300")
 mainGUI.resizable(0, 0)
 
 lblSubject = Label(mainGUI, text="Search:")
