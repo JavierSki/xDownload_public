@@ -3,10 +3,6 @@ import json
 import io
 
 
-
-
-
-
 class JsonFile:
 
     def __init__(self, _json_file_name):

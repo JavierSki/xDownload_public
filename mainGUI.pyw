@@ -25,8 +25,12 @@ def btnSearchAndDownload_Click():
     server = str(cbserver.get())
     output_dir = str(txtOutput.get())
     # ordem: server, search, firt page, last page, output dir
-    command = 'start python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
+    if plataforma == 'Linux':
+        command = 'sudo python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
+    else:
+        command = 'start python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
     os.system(command)
+
 
 def get_output_dir():
     folder = askdirectory()
@@ -34,8 +38,10 @@ def get_output_dir():
     txtOutput.delete(0, END)
     txtOutput.insert(0, dirStr)
 
+
 def btnExit_Click():
     mainGUI.destroy()
+
 
 line1 = 10
 line2 = 35
@@ -44,14 +50,19 @@ line4 = 85
 line5 = 110
 line6 = 135
 
+
 plataforma = platform.system()
 
 mainGUI = Tk()
 mainGUI.title("xDownload V 1.0")
-if(plataforma == 'Linux'):
+
+
+if plataforma == 'Linux':
   mainGUI.geometry("350x150+300+300")
 else:
   mainGUI.geometry("270x165+300+300")
+
+
 mainGUI.resizable(0, 0)
 
 lblSubject = Label(mainGUI, text="Search:")
