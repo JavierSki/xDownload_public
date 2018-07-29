@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from pprint import pprint
 import json
 import io
 
@@ -22,3 +23,8 @@ class JsonFile:
                 outfile.write(unicode(str_, 'UTF-8')) #python 2X
             except:
                 outfile.write(str_) #python 3X
+
+    def json_details_read(self):
+        with open(self.file_name + '.json') as f:
+            data = json.load(f)
+            return data

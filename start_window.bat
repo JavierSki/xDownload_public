@@ -1,1 +1,1 @@
-start python mainGUI.pyw
+start pythonw mainGUI.pyw
