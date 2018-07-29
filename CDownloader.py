@@ -150,7 +150,7 @@ class Downloader:
                 except TimeoutException:
                     print("Tempo de carregamento esgotado!")
                 except:
-                    subprocess.run("cls")
+                    subprocess.run("cls", shell=True)
                     print("Tempo limite para o carregamento da página esgotado.")
                     print("Tente novamente!")
             else:
