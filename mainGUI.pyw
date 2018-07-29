@@ -16,8 +16,10 @@ except ImportError:
 
 import os
 import platform
-import time
+from CJsonFile import JsonFile
 from PIL import Image, ImageTk
+
+flag_downloading = False
 
 def btnSearchAndDownload_Click():
     search = str(txtSearch.get()).replace(" ", "+") # replace spaces by +
@@ -30,6 +32,8 @@ def btnSearchAndDownload_Click():
         command = 'sudo python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
     else:
         command = 'start python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
+    global flag_downloading
+    flag_downloading = True
     os.system(command)
 
 
@@ -40,13 +44,21 @@ def get_output_dir():
     txtOutput.insert(0, dirStr)
 
 
-x = 0
+jsonfile = JsonFile("data")
+
+
 def timer():
-    global x
-    if x < 30:
+    if True:
         mainGUI.after(1000, timer) # call this function again in 1,000 milliseconds
-        x += 1
-        lblInfo['text'] = str(x)
+        data = jsonfile.json_details_read()
+        if flag_downloading:
+            lblInfo1['text'] = str(data["link"])
+            lblInfo2['text'] = "Downloading: " + str(int(data["current"])+1) + " from " + str(int(data["range"])+1)
+            progress["value"] = int(data["%"])
+        else:
+            lblInfo1['text'] = "Link: -"
+            lblInfo2['text'] = "Waiting"
+            progress["value"] = 0
 
 
 
@@ -60,6 +72,10 @@ line3 = 60
 line4 = 85
 line5 = 110
 line6 = 135
+line7 = 163
+line8 = 185
+line9 = 215
+
 
 
 plataforma = platform.system()
@@ -69,9 +85,10 @@ mainGUI.title("xDownload V 1.0")
 
 
 if plataforma == 'Linux':
-  mainGUI.geometry("350x185+300+300")
+  mainGUI.geometry("350x280+300+300")
 else:
-  mainGUI.geometry("270x185+300+300")
+  mainGUI.geometry("270x280+300+300")
+
 
 
 mainGUI.resizable(1, 1)
@@ -138,6 +155,19 @@ btnExit.place(x=12, y=150)
 lblInfo = Label(mainGUI, text="0")
 lblInfo.place(x=300, y=line4)
 
+
+timer()
+
+lblInfo2 = Label(mainGUI, text="0")
+lblInfo2.place(x=10, y=line7)
+
+progress = ttk.Progressbar(mainGUI, orient="horizontal", length=244, mode="determinate")
+progress["value"] = 2
+progress["maximum"] = 100
+progress.place(x=12, y=line8)
+
+lblInfo1 = Label(mainGUI, text="0", wraplength=250)
+lblInfo1.place(x=8, y=line9)
 
 timer()
 
