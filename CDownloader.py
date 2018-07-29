@@ -10,7 +10,6 @@ import os
 
 
 
-
 class Downloader:
 
     def __init__(self, _server, _output_dir, _search, _first_page, _last_page):
@@ -153,7 +152,7 @@ class Downloader:
                 except TimeoutException:
                     print("Tempo de carregamento esgotado!")
                 except:
-                    os.system("cls")
+                    subprocess.run("cls", shell=True)
                     print("Tempo limite para o carregamento da página esgotado.")
                     print("Tente novamente!")
             else:
