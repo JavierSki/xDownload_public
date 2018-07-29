@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 import io
 
@@ -15,6 +16,6 @@ class JsonFile:
                 'current': _current_number,
                 'link': _current_link}
         # Write JSON file
-        with io.open(self.file_name + '.json', 'w', encoding='utf8') as outfile:
+         with io.open(self.file_name + '.json', 'w', encoding='utf-8') as outfile:
             str_ = json.dumps(data, indent=4, sort_keys=True, separators=(',', ': '), ensure_ascii=False)
-            outfile.write(str_)
+            outfile.write(unicode(str_, 'UTF-8'))
