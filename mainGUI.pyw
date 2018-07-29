@@ -77,6 +77,7 @@ line8 = 185
 line9 = 215
 
 
+
 plataforma = platform.system()
 
 mainGUI = Tk()
@@ -87,6 +88,7 @@ if plataforma == 'Linux':
   mainGUI.geometry("350x280+300+300")
 else:
   mainGUI.geometry("270x280+300+300")
+
 
 
 mainGUI.resizable(1, 1)
@@ -142,13 +144,19 @@ buttonImage = Image.open('folder.png')
 buttonPhoto = ImageTk.PhotoImage(buttonImage)
 
 btnSelectDir = ttk.Button(mainGUI, image=buttonPhoto, command=get_output_dir, width=5)
-btnSelectDir.place(x=225, y=line4)
+btnSelectDir.place(x=265, y=line4)
 
 btnSearchAndDownload = ttk.Button(mainGUI, text="Search and Download All", command=btnSearchAndDownload_Click, width=39)
-btnSearchAndDownload.place(x=12, y=line5)
+btnSearchAndDownload.place(x=12, y=120)
 
 btnExit = ttk.Button(mainGUI, text="Exit", command=btnExit_Click, width=39)
-btnExit.place(x=12, y=line6)
+btnExit.place(x=12, y=150)
+
+lblInfo = Label(mainGUI, text="0")
+lblInfo.place(x=300, y=line4)
+
+
+timer()
 
 lblInfo2 = Label(mainGUI, text="0")
 lblInfo2.place(x=10, y=line7)
