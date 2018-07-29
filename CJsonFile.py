@@ -4,6 +4,9 @@ import io
 
 
 
+
+
+
 class JsonFile:
 
     def __init__(self, _json_file_name):
@@ -17,6 +20,9 @@ class JsonFile:
                 'current': _current_number,
                 'link': _current_link}
         # Write JSON file
-         with io.open(self.file_name + '.json', 'w', encoding='utf-8') as outfile:
+        with io.open(self.file_name + '.json', 'w', encoding='utf-8') as outfile:
             str_ = json.dumps(data, indent=4, sort_keys=True, separators=(',', ': '), ensure_ascii=False)
-            outfile.write(unicode(str_, 'UTF-8'))
+            try:
+                outfile.write(unicode(str_, 'UTF-8')) #python 2X
+            except:
+                outfile.write(str_) #python 3X

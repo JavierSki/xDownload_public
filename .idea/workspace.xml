@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77e85443-f40f-4790-b49b-405f657f3b7c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CDownloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/CDownloader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CJsonFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/CJsonFile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainGUI.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/mainGUI.pyw" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainGUI.pyw" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainGUI.pyw" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainGUI.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1100">
-              <caret line="34" column="31" lean-forward="true" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+            <state relative-caret-position="17">
+              <caret line="1" column="17" lean-forward="true" selection-end-line="1" selection-end-column="17" />
               <folding>
                 <element signature="e#290#299#0" expanded="true" />
               </folding>
@@ -43,8 +41,8 @@
       <file leaf-file-name="CDownloader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CDownloader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+            <state relative-caret-position="192">
+              <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -52,13 +50,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CJsonFile.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CJsonFile.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CJsonFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+            <state relative-caret-position="328">
+              <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#24#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,9 +101,9 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/CDownloaderBeeg.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/CJsonFile.py" />
         <option value="$PROJECT_DIR$/mainGUI.pyw" />
         <option value="$PROJECT_DIR$/CDownloader.py" />
+        <option value="$PROJECT_DIR$/CJsonFile.py" />
       </list>
     </option>
   </component>
@@ -552,7 +550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532887619229</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Select folder implemented">
+      <created>1532891635586</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1532891635586</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -562,7 +567,7 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15885799" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.209622" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.2082671" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29411766" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -603,7 +608,8 @@
     <MESSAGE value="Readme SpankBang" />
     <MESSAGE value="Readme youtube-dl library" />
     <MESSAGE value="XNXX suported" />
-    <option name="LAST_COMMIT_MESSAGE" value="XNXX suported" />
+    <MESSAGE value="Select folder implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Select folder implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -680,12 +686,12 @@
     <entry file="file://$PROJECT_DIR$/CDownloaderXHamster.py" />
     <entry file="file://$PROJECT_DIR$/CDownloaderYouPorn.py" />
     <entry file="file://$PROJECT_DIR$/CDownloaderBeeg.py" />
-    <entry file="file://$PROJECT_DIR$/CJsonFile.py">
+    <entry file="file://$PROJECT_DIR$/CDownloader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        <state relative-caret-position="192">
+          <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -700,22 +706,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CDownloader.py">
+    <entry file="file://$PROJECT_DIR$/mainGUI.pyw">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+        <state relative-caret-position="17">
+          <caret line="1" column="17" lean-forward="true" selection-end-line="1" selection-end-column="17" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#290#299#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainGUI.pyw">
+    <entry file="file://$PROJECT_DIR$/CJsonFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1100">
-          <caret line="34" column="31" lean-forward="true" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+        <state relative-caret-position="328">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
           <folding>
-            <element signature="e#290#299#0" expanded="true" />
+            <element signature="e#24#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
