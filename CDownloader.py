@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import requests
 import bs4
 from CConection import Conection
