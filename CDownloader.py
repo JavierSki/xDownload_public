@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import requests
 import bs4
 from CConection import Conection
@@ -28,7 +30,7 @@ class Downloader:
         if self.list_link != 0:
             for j in range(0, len(self.list_link)):
                 self.jsonfile.json_details_write(len(self.list_link), j, self.list_link[j])
-                self.ydl_opts = {'outtmpl': self.output_dir + '\%(title)s.%(ext)s'}
+                 self.ydl_opts = {'outtmpl': self.output_dir + '/%(title)s.%(ext)s'}I
                 with youtube_dl.YoutubeDL(self.ydl_opts) as ydl:
                     ydl.download([self.list_link[j]])
 
