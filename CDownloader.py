@@ -6,6 +6,7 @@ import youtube_dl
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 import time
+import subprocess
 
 
 class Downloader:
@@ -149,7 +150,7 @@ class Downloader:
                 except TimeoutException:
                     print("Tempo de carregamento esgotado!")
                 except:
-                    os.system("cls")
+                    subprocess.run("cls")
                     print("Tempo limite para o carregamento da página esgotado.")
                     print("Tente novamente!")
             else:
