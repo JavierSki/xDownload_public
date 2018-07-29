@@ -63,7 +63,7 @@ else:
   mainGUI.geometry("270x165+300+300")
 
 
-mainGUI.resizable(0, 0)
+mainGUI.resizable(1, 0)
 
 lblSubject = Label(mainGUI, text="Search:")
 lblSubject.place(x=10, y=line1)
