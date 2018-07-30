@@ -48,15 +48,44 @@ def get_output_dir():
 
 jsonfile = JsonFile("data")
 
+x = 0
+sinal = (">>>",
+         " >>>",
+         "  >>>",
+         "   >>>",
+         "    >>>",
+         "     >>>",
+         "      >>>",
+         "       >>>",
+         "        >>>",
+         "         >>>",
+         "          >>>",
+         "          <<<",
+         "         <<<",
+         "        <<<",
+         "       <<<",
+         "      <<<",
+         "     <<<",
+         "    <<<",
+         "   <<<",
+         "  <<<",
+         " <<<",
+         "<<<")
+
 
 def timer():
     if True:
-        mainGUI.after(1000, timer) # call this function again in 1,000 milliseconds
+        global x
+        x += 1
+        if x > 21:
+            x = 0
+        mainGUI.after(100, timer) # call this function again in 1,000 milliseconds
         data = jsonfile.json_details_read()
+
         if flag_downloading:
             lblInfo1['text'] = str(data["link"])
-            lblInfo2['text'] = "Downloading: " + str(int(data["current"])+1) + " from " + str(int(data["range"])+1)
-            progress["value"] = int(data["%"])
+            lblInfo2['text'] = " Downloading: " + str(int(data["current"])+1) + " from " + str(int(data["range"])+1) + " " + str(sinal[x])
+            progress["value"] = 1 if int(data["%"]) == 0 else int(data["%"])
         else:
             lblInfo1['text'] = "Link: -"
             lblInfo2['text'] = "Waiting"
