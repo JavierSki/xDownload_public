@@ -32,7 +32,7 @@ def btnSearchAndDownload_Click():
     if plataforma == 'Linux':
         command = 'sudo python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
     else:
-        command = 'start pythonw main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
+        command = 'start python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
     global flag_downloading
     flag_downloading = True
     #os.system(command)

@@ -30,8 +30,8 @@
       <file leaf-file-name="mainGUI.pyw" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mainGUI.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="72" column="10" lean-forward="true" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+            <state relative-caret-position="454">
+              <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
               <folding>
                 <element signature="e#385#394#0" expanded="true" />
               </folding>
@@ -383,13 +383,6 @@
       <option name="presentableId" value="Default" />
       <updated>1532133609339</updated>
     </task>
-    <task id="LOCAL-00001" summary="Alteração do Readme">
-      <created>1532289827787</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1532289827787</updated>
-    </task>
     <task id="LOCAL-00002" summary="Alteracoa no main">
       <created>1532289926434</created>
       <option name="number" value="00002" />
@@ -726,7 +719,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532909630695</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Select folder implemented">
+      <created>1532911027776</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1532911027777</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -736,9 +736,10 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15885799" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290938" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2082671" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29411766" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29411766" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -749,7 +750,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3290938" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -887,8 +887,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mainGUI.pyw">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="72" column="10" lean-forward="true" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+        <state relative-caret-position="454">
+          <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
           <folding>
             <element signature="e#385#394#0" expanded="true" />
           </folding>
