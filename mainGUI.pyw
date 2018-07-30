@@ -15,6 +15,7 @@ except ImportError:
 
 
 import os
+import subprocess
 import platform
 from CJsonFile import JsonFile
 from PIL import Image, ImageTk
@@ -31,10 +32,11 @@ def btnSearchAndDownload_Click():
     if plataforma == 'Linux':
         command = 'sudo python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
     else:
-        command = 'start python main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
+        command = 'start pythonw main.py ' + server + ' ' + search + ' ' + first_page + ' ' + last_page + ' ' + output_dir
     global flag_downloading
     flag_downloading = True
-    os.system(command)
+    #os.system(command)
+    subprocess.call(command, shell=True)
 
 
 def get_output_dir():
@@ -72,9 +74,9 @@ line3 = 60
 line4 = 85
 line5 = 110
 line6 = 135
-line7 = 163
-line8 = 185
-line9 = 215
+line7 = 181
+line8 = 206
+line9 = 225
 
 
 
@@ -144,7 +146,7 @@ buttonImage = Image.open('folder.png')
 buttonPhoto = ImageTk.PhotoImage(buttonImage)
 
 btnSelectDir = ttk.Button(mainGUI, image=buttonPhoto, command=get_output_dir, width=5)
-btnSelectDir.place(x=265, y=line4)
+btnSelectDir.place(x=225, y=line4)
 
 btnSearchAndDownload = ttk.Button(mainGUI, text="Search and Download All", command=btnSearchAndDownload_Click, width=39)
 btnSearchAndDownload.place(x=12, y=120)
@@ -152,22 +154,16 @@ btnSearchAndDownload.place(x=12, y=120)
 btnExit = ttk.Button(mainGUI, text="Exit", command=btnExit_Click, width=39)
 btnExit.place(x=12, y=150)
 
-lblInfo = Label(mainGUI, text="0")
-lblInfo.place(x=300, y=line4)
-
-
-timer()
-
-lblInfo2 = Label(mainGUI, text="0")
-lblInfo2.place(x=10, y=line7)
-
 progress = ttk.Progressbar(mainGUI, orient="horizontal", length=244, mode="determinate")
 progress["value"] = 2
 progress["maximum"] = 100
-progress.place(x=12, y=line8)
+progress.place(x=12, y=line7)
+
+lblInfo2 = Label(mainGUI, text="0")
+lblInfo2.place(x=10, y=line8)
 
 lblInfo1 = Label(mainGUI, text="0", wraplength=250)
-lblInfo1.place(x=8, y=line9)
+lblInfo1.place(x=10, y=line9)
 
 timer()
 
